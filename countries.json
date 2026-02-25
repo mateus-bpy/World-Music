@@ -1,0 +1,22 @@
+{
+  "PT": { "name": "Portugal" },
+  "BR": { "name": "Brazil" },
+  "US": { "name": "United States" },
+  "GB": { "name": "United Kingdom" },
+  "DE": { "name": "Germany" },
+  "FR": { "name": "France" },
+  "ES": { "name": "Spain" },
+  "IT": { "name": "Italy" },
+  "JP": { "name": "Japan" },
+  "KR": { "name": "South Korea" },
+  "MX": { "name": "Mexico" },
+  "AR": { "name": "Argentina" },
+  "AU": { "name": "Australia" },
+  "NL": { "name": "Netherlands" },
+  "SE": { "name": "Sweden" },
+  "NO": { "name": "Norway" },
+  "PL": { "name": "Poland" },
+  "IN": { "name": "India" },
+  "NG": { "name": "Nigeria" },
+  "ZA": { "name": "South Africa" }
+}
