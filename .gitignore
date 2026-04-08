@@ -1,0 +1,4 @@
+.env
+music_data.json 
+__pycache__/
+.venv/
