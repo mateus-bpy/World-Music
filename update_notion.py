@@ -27,12 +27,6 @@ CONTINENT_MAP = {
 def safe_text(value):
     return {"rich_text": [{"text": {"content": str(value) if value else "N/A"}}]}
 
-def h2(text):
-    return {
-        "object": "block", "type": "heading_2",
-        "heading_2": {"rich_text": [{"type": "text", "text": {"content": text}}]}
-    }
-
 def paragraph(text, bold=False, italic=False, color="default"):
     annotations = {}
     if bold: annotations["bold"] = True
@@ -70,17 +64,6 @@ def image_block(url):
 def embed_block(url):
     return {"object": "block", "type": "embed", "embed": {"url": url}}
 
-def bookmark_block(url):
-    return {"object": "block", "type": "bookmark", "bookmark": {"url": url}}
-
-def delete_all_blocks(page_id):
-    blocks = notion.blocks.children.list(block_id=page_id).get("results", [])
-    for block in blocks:
-        try:
-            notion.blocks.delete(block_id=block["id"])
-        except Exception:
-            pass
-
 
 # ---------------------------------------------------------------------------
 # DATABASE PROPERTIES
@@ -112,8 +95,6 @@ def build_properties(data, code, include_name=True):
 
 # ---------------------------------------------------------------------------
 # COUNTRY PAGE LIVE DATA SECTION
-# Same anchor + stored block ID approach as the landing page
-# Heading: "🔄 Live Data" — placed at top of each country page before first run
 # ---------------------------------------------------------------------------
 
 COUNTRY_ANCHOR_HEADING = "H I G H L I G H T S"
@@ -164,12 +145,6 @@ def build_country_live_blocks(data):
         col2.append(embed_block(data["spotify_embed_url"]))
     else:
         col2.append(paragraph("Unavailable.", italic=True, color="gray"))
-    col2.append(callout(
-        f'Top genre - {data.get("top_genre", "—")}',
-        emoji="🎸",
-        color="purple_background",
-        bold= True
-    ))
 
     # column 3 — top 10 tracks, then genre, then last updated
     col3 = []
@@ -177,6 +152,11 @@ def build_country_live_blocks(data):
     for track in data.get("top_tracks", []):
         clean = track.split(". ", 1)[-1] if ". " in track else track
         col3.append(numbered_item(clean))
+    col3.append(callout(
+        data.get("top_genre", "—"),
+        emoji="🎸",
+        color="purple_background"
+    ))
     col3.append(divider())
     col3.append({
         "object": "block",
@@ -295,12 +275,7 @@ def update_country_page(page_id, data, code):
 
 
 # ---------------------------------------------------------------------------
-# LANDING PAGE — writes only the three column world highlights section
-# Teammates must add this exact heading as a top-level block on the landing page:
-# "🌍 This Week's Global Highlights"
-# The code deletes everything after that heading until the next divider,
-# then writes the three column section fresh.
-# Everything above and below is never touched.
+# LANDING PAGE
 # ---------------------------------------------------------------------------
 
 def build_landing_section_blocks(global_stats):
@@ -315,7 +290,7 @@ def build_landing_section_blocks(global_stats):
 
     # column 2 — two spotify embeds, minimal labels
     col2 = []
-    col2.append(paragraph(f"{global_stats.get('top_global_artist', '—')}'s Signature Track", bold=True))
+    col2.append(paragraph("Signature Track", bold=True))
     if global_stats.get("top_global_artist_embed_artist"):
         col2.append(embed_block(global_stats["top_global_artist_embed_artist"]))
     else:
@@ -341,7 +316,7 @@ def build_landing_section_blocks(global_stats):
                 "content": f"Last Updated - {datetime.now().strftime('%B %d, %Y')}"
             }}],
             "icon": {"type": "emoji", "emoji": "🔄"},
-            "color": "default_background"
+            "color": "default"
         }
     })
 
@@ -435,9 +410,6 @@ def update_landing_page(global_stats):
             print(f"  Could not delete old block: {e}")
 
     print("  Landing page highlights updated.")
-
-
-
 
 def update_notion(music_data_path="music_data.json"):
     with open(music_data_path) as f:
