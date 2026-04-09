@@ -1,17 +1,92 @@
 {
-  "PT": { "name": "Portugal", "radio_garden_url": "https://radio.garden/visit/lisbon" },
-  "BR": { "name": "Brazil", "radio_garden_url": "https://radio.garden/visit/sao-paulo" },
-  "US": { "name": "United States of America", "radio_garden_url": "https://radio.garden/visit/new-york" },
-  "GB": { "name": "United Kingdom", "radio_garden_url": "https://radio.garden/visit/london" },
-  "DE": { "name": "Germany", "radio_garden_url": "https://radio.garden/visit/berlin" },
-  "FR": { "name": "France", "radio_garden_url": "https://radio.garden/visit/paris" },
-  "ES": { "name": "Spain", "radio_garden_url": "https://radio.garden/visit/madrid" },
-  "IT": { "name": "Italy", "radio_garden_url": "https://radio.garden/visit/rome" },
-  "MX": { "name": "Mexico", "radio_garden_url": "https://radio.garden/visit/mexico-city" },
-  "AR": { "name": "Argentina", "radio_garden_url": "https://radio.garden/visit/buenos-aires" },
-  "AU": { "name": "Australia", "radio_garden_url": "https://radio.garden/visit/sydney" },
-  "NO": { "name": "Norway", "radio_garden_url": "https://radio.garden/visit/oslo" },
-  "SE": { "name": "Sweden", "radio_garden_url": "https://radio.garden/visit/stockholm" },
-  "FI": { "name": "Finland", "radio_garden_url": "https://radio.garden/visit/helsinki" },
-  "NL": { "name": "Netherlands", "radio_garden_url": "https://radio.garden/visit/amsterdam" }
+  "PT": {
+    "name": "Portugal",
+    "radio_garden_url": "https://radio.garden/visit/lisbon",
+    "radio_station_name": " M80 Rádio – 80s",
+    "radio_stream_url": "https://stream-icy.bauermedia.pt/m8080.aac"
+  },
+  "BR": {
+    "name": "Brazil",
+    "radio_garden_url": "https://radio.garden/visit/sao-paulo",
+    "radio_station_name": "BH FM 102,1 MHz ZYC690 (Belo Horizonte - MG)",
+    "radio_stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/BHFMAAC.aac"
+  },
+  "US": {
+    "name": "United States of America",
+    "radio_garden_url": "https://radio.garden/visit/new-york",
+    "radio_station_name": "Classic Vinyl HD",
+    "radio_stream_url": "https://icecast.walmradio.com:8443/classic"
+  },
+  "GB": {
+    "name": "United Kingdom",
+    "radio_garden_url": "https://radio.garden/visit/london",
+    "radio_station_name": "Capital FM London",
+    "radio_stream_url": "http://media-ice.musicradio.com/CapitalMP3"
+  },
+  "DE": {
+    "name": "Germany",
+    "radio_garden_url": "https://radio.garden/visit/berlin",
+    "radio_station_name": "MANGORADIO",
+    "radio_stream_url": "https://mangoradio.stream.laut.fm/mangoradio"
+  },
+  "FR": {
+    "name": "France",
+    "radio_garden_url": "https://radio.garden/visit/paris",
+    "radio_station_name": "Radio Nova",
+    "radio_stream_url": "http://novazz.ice.infomaniak.ch/novazz-128.mp3"
+  },
+  "ES": {
+    "name": "Spain",
+    "radio_garden_url": "https://radio.garden/visit/madrid",
+    "radio_station_name": "LOS 40 Principales España",
+    "radio_stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/Los40.mp3"
+  },
+  "IT": {
+    "name": "Italy",
+    "radio_garden_url": "https://radio.garden/visit/rome",
+    "radio_station_name": "Radio 105 Network",
+    "radio_stream_url": "http://icecast.unitedradio.it/Radio105.mp3"
+  },
+  "MX": {
+    "name": "Mexico",
+    "radio_garden_url": "https://radio.garden/visit/mexico-city",
+    "radio_station_name": "ALFA 91.3 (Ciudad de México) - 91.3 FM - XHFAJ-FM - Grupo Radio Centro - Ciudad de México",
+    "radio_stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/XHFAJ_FMAAC.aac"
+  },
+  "AR": {
+    "name": "Argentina",
+    "radio_garden_url": "https://radio.garden/visit/buenos-aires",
+    "radio_station_name": "Rock & Pop 95.9 FM",
+    "radio_stream_url": "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCKANDPOP.mp3"
+  },
+  "AU": {
+    "name": "Australia",
+    "radio_garden_url": "https://radio.garden/visit/sydney",
+    "radio_station_name": "80s 90s Super Pop Hits",
+    "radio_stream_url": "https://s4.myradiostream.com:7344/listen.mp3?"
+  },
+  "NO": {
+    "name": "Norway",
+    "radio_garden_url": "https://radio.garden/visit/oslo",
+    "radio_station_name": "NRJ Norge",
+    "radio_stream_url": "https://live-bauerno.sharp-stream.com/kiss_no_mp3"
+  },
+  "SE": {
+    "name": "Sweden",
+    "radio_garden_url": "https://radio.garden/visit/stockholm",
+    "radio_station_name": "Svensk Folkmusik - AkkA radio",
+    "radio_stream_url": "http://mediaserv38.live-streams.nl:8107/stream"
+  },
+  "FI": {
+    "name": "Finland",
+    "radio_garden_url": "https://radio.garden/visit/helsinki",
+    "radio_station_name": "Radio Nova",
+    "radio_stream_url": "https://stream-redirect.bauermedia.fi/radionova/radionova_64.aac?aw_0_1st.bauer_loggedin=false&aw_0_1st.playerid=BMUK_tunein"
+  },
+  "NL": {
+    "name": "Netherlands",
+    "radio_garden_url": "https://radio.garden/visit/amsterdam",
+    "radio_station_name": "Radio 10",
+    "radio_stream_url": "http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3"
+  }
 }
