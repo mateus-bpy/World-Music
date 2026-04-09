@@ -148,7 +148,7 @@ def build_country_live_blocks(data):
     col2.append(callout(
         f"Top Genre - {data.get("top_genre", "—")}",
         emoji="🎸",
-        color="purple_background"
+        color="blue_background"
     ))
 
     # column 3 — top 10 tracks, then genre, then last updated
