@@ -145,6 +145,11 @@ def build_country_live_blocks(data):
         col2.append(embed_block(data["spotify_embed_url"]))
     else:
         col2.append(paragraph("Unavailable.", italic=True, color="gray"))
+    col2.append(callout(
+        f"Top Genre - {data.get("top_genre", "—")}",
+        emoji="🎸",
+        color="purple_background"
+    ))
 
     # column 3 — top 10 tracks, then genre, then last updated
     col3 = []
@@ -152,11 +157,6 @@ def build_country_live_blocks(data):
     for track in data.get("top_tracks", []):
         clean = track.split(". ", 1)[-1] if ". " in track else track
         col3.append(numbered_item(clean))
-    col3.append(callout(
-        data.get("top_genre", "—"),
-        emoji="🎸",
-        color="purple_background"
-    ))
     col3.append(divider())
     col3.append({
         "object": "block",
