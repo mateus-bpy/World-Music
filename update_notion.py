@@ -290,7 +290,7 @@ def build_landing_section_blocks(global_stats):
 
     # column 2 — two spotify embeds, minimal labels
     col2 = []
-    col2.append(paragraph("Signature Track", bold=True))
+    col2.append(paragraph(f"{global_stats.get('top_global_artist', '—')}'s Signature Track", bold=True))
     if global_stats.get("top_global_artist_embed_artist"):
         col2.append(embed_block(global_stats["top_global_artist_embed_artist"]))
     else:
